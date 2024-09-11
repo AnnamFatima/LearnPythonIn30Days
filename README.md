@@ -879,3 +879,250 @@ The if statement checks if the value of i is greater than or equal to 10. If it 
 When you run this code, you'll see the numbers 1 through 10 printed, and then the loop will stop.
 
 Note that if you remove the if statement and the break statement, the loop will indeed run infinitely, printing numbers indefinitely.
+
+
+******Functions And Modules *****
+
+Functions in Python
+What is a function?
+A function is a block of reusable code that is used to perform a specific action. Functions allow you to write clean and maintainable code.
+
+Syntax:
+
+def function_name(parameters):
+    # code block
+    return result
+
+Example:
+
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!
+
+
+Key Concepts:
+Defining a Function: You use the def keyword followed by the function name and parentheses.
+Arguments/Parameters: Values you pass into the function to work with.
+Return Statement: Used to send back a value from a function.
+Default Parameters:
+
+
+You can define default values for parameters.
+
+
+def greet(name="Guest"):
+    return f"Hello, {name}!"
+
+print(greet())  # Output: Hello, Guest!
+print(greet("Bob"))  # Output: Hello, Bob!
+
+
+Functions with Multiple Parameters:
+
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+
+
+Returning Multiple Values:
+A function can return multiple values in the form of a tuple.
+
+
+def get_values():
+    return 1, 2, 3
+
+x, y, z = get_values()
+print(x, y, z)  # Output: 1 2 3
+
+
+Some Examples:
+
+Simple Greeting Function
+Create a function that takes a name as input and prints a personalized greeting message.
+
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Annam")
+
+2. Function to Add Two Numbers
+#Write a function that takes two numbers as arguments and returns their sum.
+
+def add(a,b):
+    return(a+b)
+
+result= add(8,9)
+print(result)
+
+ #Find the Maximum of Three Numbers
+#Create a function that takes three numbers and returns the largest of them.
+def numbers(x, y, z):
+    return max(x, y, z)
+
+result = numbers(141, 231, 789)
+print(result)
+
+Factorial Function #Write a function that calculates the factorial of a given number.def 
+
+factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+result = factorial(5)
+print(result)
+This function uses recursion to calculate the factorial of a given number n. Here's a breakdown of how it works:
+
+The function checks if n is 0, in which case it returns 1 (since the factorial of 0 is defined to be 1).
+If n is not 0, the function calls itself with n-1 as an argument, and multiplies the result by n. This process continues until n reaches 0.
+The final result is the product of all the numbers from n down to 1, which is the definition of the factorial.
+For example, if we call the function with n=5, it will calculate the factorial as follows:
+
+factorial(5) = 5 * factorial(4)
+             = 5 * (4 * factorial(3))
+             = 5 * (4 * (3 * factorial(2)))
+             = 5 * (4 * (3 * (2 * factorial(1))))
+             = 5 * (4 * (3 * (2 * 1)))
+             = 120
+
+The output of the code will be 120, which is the correct factorial of 5.
+
+Alternatively, you can also implement the factorial function using a loop instead of recursion:
+
+def factorial(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+result = factorial(5)
+print(result)
+
+def factorial(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+result = factorial(5)
+print(result)
+
+#Task
+#2 nos' if you add then you get 7
+#square of the number's
+#1functions call to be used 
+
+def add(x ,y):
+    return(x + y)
+def square(z):
+    return(z*z)
+
+result = square(add(6,1))
+print(result)
+'''
+
+'''#Factorial
+
+def factorial(n):
+    if n <2:
+        return 1
+    else:
+        return n * (factorial(n-1))
+
+result = factorial(4) 
+print (result)'''
+
+'''#Practice Exercise:
+#Create a Simple Function: Write a function that takes a name as input and returns a personalized greeting.
+
+def greet(name, greeting = "Hello"):
+    return (f"{greeting} {name}!")
+
+print(greet("Annam"))'''
+
+#Function with Multiple Arguments: Create a function that calculates the area of a rectangle.
+
+def area (length, width):
+    return length * width
+length = 8
+width = 7
+
+result = area (length , width)
+print(f"Area of a rectangle : {result}")
+
+Using Default Arguments: Write a function to print a list of items, with a default separator.
+
+To create a function that prints a list of items with a default separator, you can define a function that takes a list of items and an optional separator as inputs. Here's an example of how you can do this:
+
+def print_list(items, separator=', '):
+    print(separator.join(map(str, items)))
+
+# Example usage:
+fruits = ['apple', 'banana', 'cherry']
+print_list(fruits)  # Output: apple, banana, cherry
+
+numbers = [1, 2, 3, 4, 5]
+print_list(numbers, ' | ')  # Output: 1 | 2 | 3 | 4 | 5
+
+In this example, the print_list function takes a list of items as the first argument, and an optional separator as the second argument. The default separator is a comma followed by a space (', '). The function uses the join method to concatenate the items in the list with the separator, and then prints the resulting string.
+
+By using a default argument, you can call the function with just the list of items, and it will use the default separator. If you want to use a different separator, you can pass it as the second argument.
+
+Note that I used the map function to convert each item in the list to a string, in case the list contains non-string items. This ensures that the join method works correctly.
+
+Explore Variable Scope: Experiment with local and global variables inside and outside functions.
+
+In Python, variables can be classified into two categories: local variables and global variables.
+
+Local Variables: Local variables are those that are defined inside a function. They are only accessible within the function where they are defined and cannot be accessed from outside the function. Here's an example:
+
+def my_function():
+    local_var = 5  # Local variable
+    print(local_var)  # Accessible here
+
+my_function()
+print(local_var)  # Raises an error because local_var is not accessible here
+
+Global Variables: Global variables, on the other hand, are those that are defined outside any function. They are accessible throughout the program, including inside and outside functions. Here's an example:
+
+global_var = 10  # Global variable
+
+def my_function():
+    print(global_var)  # Accessible here
+
+my_function()
+print(global_var)  # Accessible here
+
+Modifying Global Variables: If you want to modify a global variable inside a function, you need to use the global keyword to indicate that the variable is global. Here's an example:
+
+global_var = 10  # Global variable
+
+def my_function():
+    global global_var
+    global_var = 20  # Modify the global variable
+    print(global_var)  # Output: 20
+
+my_function()
+print(global_var)  # Output: 20
+
+Nonlocal Variables: In Python, there's also a third category of variables called nonlocal variables. Nonlocal variables are used in nested functions, where a variable is defined in an outer function and accessed in an inner function. Here's an example:
+
+def outer_function():
+    nonlocal_var = 5  # Nonlocal variable
+
+    def inner_function():
+        nonlocal nonlocal_var
+        nonlocal_var = 10  # Modify the nonlocal variable
+        print(nonlocal_var)  # Output: 10
+
+    inner_function()
+    print(nonlocal_var)  # Output: 10
+
+outer_function()
+
+In this example, the nonlocal_var is defined in the outer_function and accessed in the inner_function. The nonlocal keyword is used to indicate that the variable is nonlocal.
+
