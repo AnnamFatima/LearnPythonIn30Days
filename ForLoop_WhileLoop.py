@@ -337,3 +337,13 @@ while True:
     print(i)
     if i >= 10:
         break'''
+
+def print_multiplication_table(n):
+    print("Multiplication Table of ",n)
+    for i in range(1,11):
+        multiplication= n * i
+        print(f"{n} x {i} = {multiplication}")
+
+num=int(input("Enter a number : "))
+print_multiplication_table(num)
+
