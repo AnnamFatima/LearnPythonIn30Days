@@ -92,7 +92,7 @@ width = 7
 result = area (length , width)
 print(f"Area of a rectangle : {result}")'''
 
-#Using Default Arguments: Write a function to print a list of items, with a default separator.
+'''#Using Default Arguments: Write a function to print a list of items, with a default separator.
 
 def print_list(items, separator=', '):
     print(separator.join(map(str, items)))
@@ -102,4 +102,55 @@ fruits = ['apple', 'banana', 'cherry']
 print_list(fruits)  # Output: apple, banana, cherry
 
 numbers = [1, 2, 3, 4, 5]
-print_list(numbers, ' | ')  # Output: 1 | 2 | 3 | 4 | 5
+print_list(numbers, ' | ')  # Output: 1 | 2 | 3 | 4 | 5'''
+
+'''#Write a function greet_user(name) that takes a name as input and prints a personalized greeting message.
+
+def greet_user(name):
+    print(f"Hello, {name}!. Its nice meeting you.")
+greet_user("Annam")'''
+
+'''#Create a function add_numbers(a, b=5) that takes two arguments and returns their sum. 
+#If the second argument is not provided, use 5 as the default value.
+
+def add_numbers(a,b=5):
+    return(a + b)
+
+result = add_numbers(10)
+print(result)'''
+
+'''#Write a Python function factorial(n) that returns the factorial of a number using recursion.
+
+def factorial(n):
+    if n < 2:
+        return 1
+    else:
+        return n * (factorial(n-1))
+result= factorial(10)
+print(result)'''
+
+'''#Implement a function is_palindrome(word) that checks if a given word is a palindrome.
+
+def is_palindrome(word):
+    """
+    Returns True if the given word is a palindrome, False otherwise.
+    """
+    # Convert the word to lowercase to ignore case sensitivity
+    word = word.lower()
+    
+    # Compare the word with its reverse
+    return word == word[::-1]
+
+# Test the function with some examples
+print(is_palindrome("madam"))  # True
+print(is_palindrome("hello"))  # False '''
+
+def reverse_string(s):
+    reversed_s = ""
+    for i in range (len(s) -1,-1,-1):
+        reversed_s += s[i]
+    return reversed_s
+
+original_string = input("Enter a string: ")
+reversed_string = reverse_string(original_string)
+print ("Reversed string: ", reversed_string)
